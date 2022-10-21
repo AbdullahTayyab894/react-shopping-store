@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import Menu from './component/card/Api'
+import Menu from './component/main page card/Api'
 import Detail from "./component/detail/Detail";
-import Cart from "./component/use cart/Cart";
-import Sidebar from './component/sidebar/Sidebar'
-import SportShoes from './component/card/Shoe'
+import Cart from "./component/main cart/Cart";
+import SportShoes from './component/main page card/Shoe';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "react-use-cart";
-import Slideshow from './component/home image/Image'
-import WovenImageList from './component/new arival/Newarival'
+import Slideshow from './component/slider/Image';
+import WovenImageList from './component/new arival/Newarival';
+import ButtonAppBar from './component/navebar/Appbar';
+import Sales from "./component/item sales/Sales";
+import Showcard from './component/home page item/Showcard'
+import Footer from "./component/footer/Footer";
+import Video from "./component/media card/Video";
 
 function App() {
   const uniqueList = [
@@ -36,19 +40,22 @@ function App() {
     <div className="App">
       <CartProvider>
         <BrowserRouter>
-          <Sidebar filterItem={filterItem} menuList={menuList} />
+          <ButtonAppBar filterItem={filterItem} menuList={menuList} />
           <Routes>
             <Route path="/" element={
               <>
-                <Slideshow />
+                <Sales />
                 <SportShoes data={myData} />
+                <Slideshow />
                 <WovenImageList />
+                <Video />
               </>
             } />
-            {/* <Route path="/" element={<SportShoes data={myData} />} /> */}
             <Route path="/detail:matchid" element={<Detail dataArray={myData} />} />
-            <Route path="/shopping-cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/home" element={<Showcard  data={myData} />} />
           </Routes>
+          <Footer filterItem={filterItem} menuList={menuList}/>
         </BrowserRouter>
       </CartProvider>
     </div>

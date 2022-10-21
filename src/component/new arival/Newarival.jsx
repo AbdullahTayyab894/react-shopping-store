@@ -1,6 +1,8 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { Typography } from '@mui/material';
+
 
 const images = [
     "images/mens/shoe1.png",
@@ -14,9 +16,15 @@ const images = [
 export default function WovenImageList() {
     return (
         <div style={{
-            margin:"50px",
+            margin: "50px",
         }}>
-            <ImageList sx={{ width: "100%", height: 500 }} variant="woven" cols={3} gap={8}>
+            <Typography variant='h2' sx={{
+                textAlign: "center",
+                mb: "30px",
+            }}>
+                New Arival
+            </Typography>
+            <ImageList sx={{ width: "100%", height: 500, }} variant="woven" cols={3} gap={8}>
                 {images.map((item) => (
                     <ImageListItem key={item.img}>
                         <img
