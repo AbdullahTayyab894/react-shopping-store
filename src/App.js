@@ -7,11 +7,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "react-use-cart";
 import Slideshow from './component/slider/Image';
 import WovenImageList from './component/new arival/Newarival';
-import ButtonAppBar from './component/navebar/Appbar';
+import MainAppbar from './component/navebar/Appbar';
 import Sales from "./component/item sales/Sales";
 import Showcard from './component/home page item/Showcard'
+import Searchbar from './component/home page item/FilterSortingSearch'
 import Footer from "./component/footer/Footer";
 import Video from "./component/media card/Video";
+import Shipping from './component/shipping detail/Shipping'
+import { ToastContainer } from 'react-toastify';
+import Acount from "./component/login signup/Acount";
+
 
 function App() {
   const uniqueList = [
@@ -40,7 +45,7 @@ function App() {
     <div className="App">
       <CartProvider>
         <BrowserRouter>
-          <ButtonAppBar filterItem={filterItem} menuList={menuList} />
+          <MainAppbar filterItem={filterItem} menuList={menuList} />
           <Routes>
             <Route path="/" element={
               <>
@@ -53,9 +58,12 @@ function App() {
             } />
             <Route path="/detail:matchid" element={<Detail dataArray={myData} />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/home" element={<Showcard  data={myData} />} />
+            <Route path="/home" element={<Showcard data={myData} filterItem={filterItem} menuList={menuList}/>} />
+            {/* <Route path="/stepper" element={<Shipping />} /> */}
+            <Route path="/acount" element={<Acount />} />
           </Routes>
-          <Footer filterItem={filterItem} menuList={menuList}/>
+          <Footer filterItem={filterItem} menuList={menuList} />
+          <ToastContainer />
         </BrowserRouter>
       </CartProvider>
     </div>

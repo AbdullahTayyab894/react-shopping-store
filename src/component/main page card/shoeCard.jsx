@@ -1,9 +1,10 @@
 import { Box, Typography, Button } from "@mui/material";
 import { useCart } from "react-use-cart";
-import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import InfoIcon from '@mui/icons-material/Info';
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import './style.css'
 
 function CardStructure({ pic, title, price, product }) {

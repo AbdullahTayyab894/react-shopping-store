@@ -41,7 +41,8 @@ function SportShoes({ data }) {
                 boxShadow: "0px 2px 4px black",
                 "&:hover": {
                   boxShadow: "4px 6px 2px black",
-                  background: "white"
+                  background: "white",
+                  color:"red"
                 }
               }}
             >

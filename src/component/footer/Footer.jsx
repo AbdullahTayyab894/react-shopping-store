@@ -3,6 +3,7 @@ import { Button, Grid, Typography } from '@mui/material'
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Link } from 'react-router-dom';
 
 const Footer = ({ filterItem, menuList }) => {
     return (
@@ -61,16 +62,20 @@ const Footer = ({ filterItem, menuList }) => {
                 <Grid md={3} xs={12} >
                     <Typography variant='h5'>NEWSLETTER SIGNUP</Typography>
                     <Typography variant="h6">Subcribe our newsletter to get 15% discount off your first purchase</Typography>
-                    <Button sx={{
-                        background: "white",
-                        color: "black",
-                        width: "200px",
-                        height: "50px",
-                        "&:hover": {
-                            color: "#D0BCA8",
-                            background: "white"
-                        }
-                    }}>Sign Up</Button>
+                    <Link to="acount" style={{
+                        textDecoration:"none"
+                    }}>
+                        <Button sx={{
+                            background: "white",
+                            color: "black",
+                            width: "200px",
+                            height: "50px",
+                            "&:hover": {
+                                color: "#D0BCA8",
+                                background: "white"
+                            }
+                        }}>Sign Up</Button>
+                    </Link>
                 </Grid>
             </Grid>
             <Grid container sx={{
@@ -85,7 +90,7 @@ const Footer = ({ filterItem, menuList }) => {
                     Copyright 2022 all right reserved
                 </Typography>
             </Grid>
-        </div>
+        </div >
     )
 }
 export default Footer

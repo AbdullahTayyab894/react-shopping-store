@@ -16,7 +16,7 @@ const images = [
 export default function WovenImageList() {
     return (
         <div style={{
-            margin: "50px",
+            margin: "30px",
         }}>
             <Typography variant='h2' sx={{
                 textAlign: "center",
@@ -24,7 +24,7 @@ export default function WovenImageList() {
             }}>
                 New Arival
             </Typography>
-            <ImageList sx={{ width: "100%", height: 500, }} variant="woven" cols={3} gap={8}>
+            <ImageList sx={{ width: "100%", height: 1000, }} variant="woven" cols={3} gap={20}>
                 {images.map((item) => (
                     <ImageListItem key={item.img}>
                         <img

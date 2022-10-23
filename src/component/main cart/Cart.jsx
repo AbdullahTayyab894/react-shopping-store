@@ -56,7 +56,7 @@ function Cart() {
 
   if (isEmpty)
     return (
-      <Link to="/" style={{
+      <Link to="/home" style={{
         textDecoration: "none"
       }}>
         <Typography
@@ -64,7 +64,7 @@ function Cart() {
           mb={36}
           sx={{
             color: "#23262f",
-            fontSize:"20px",
+            fontSize: "20px",
             fontWeight: "100",
             textAlign: "center",
           }}
@@ -220,12 +220,18 @@ function Cart() {
           >
             Total Price: $ {cartTotal}
           </Typography>
-
-          <StyledButton>Payment</StyledButton>
+          {/* <Link to="/stepper" 
+          style={{
+            textDecoration:"none"}}> */}
+          <StyledButton onClick={()=>{
+            toast.success("Next feature added comming soon")
+          }}>
+            Payment
+          </StyledButton>
+          {/* </Link> */}
         </Box>
       </Container>
     </Box>
   );
 }
-
 export default Cart;

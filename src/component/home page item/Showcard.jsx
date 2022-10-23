@@ -1,12 +1,14 @@
 import { Box,Container, Grid, Typography } from "@mui/material";
 import CardStructure from "./Allitem";
+import Searchbar from "./FilterSortingSearch";
 
-function Showcard({ data }) {
+function Showcard({ data,filterItem, menuList }) {
 
   return (
     <Box py={5} sx={{
       mt:"50px"
     }}>
+      <Searchbar filterItem={filterItem} menuList={menuList}/>
       <Typography variant="h4" sx={{
         textAlign:"center",
         mb:"20px"
