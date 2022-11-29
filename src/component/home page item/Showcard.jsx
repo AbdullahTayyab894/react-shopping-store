@@ -1,8 +1,31 @@
 import { Box,Container, Grid, Typography } from "@mui/material";
+import { useState } from "react";
 import CardStructure from "./Allitem";
 import Searchbar from "./FilterSortingSearch";
+import Menu from './allApi'
 
-function Showcard({ data,filterItem, menuList }) {
+// function Showcard({ data,filterItem, menuList }) {
+  function Showcard() {
+
+  const uniqueList = [
+    ... new Set(Menu.map((item) => {
+      return item.category;
+    })
+    ), "All",
+  ]
+  const [myData, setmyData] = useState(Menu);
+  const [menuList, setmenuList] = useState(uniqueList)
+
+  const filterItem = ((item) => {
+    if (item === "All") {
+      return setmyData(Menu)
+    }
+
+    const updatedData = Menu.filter((data) => {
+      return data.category === item;
+    });
+    setmyData(updatedData);
+  });
 
   return (
     <Box py={5} sx={{
@@ -17,7 +40,7 @@ function Showcard({ data,filterItem, menuList }) {
       </Typography>
       <Container>
         <Grid container spacing={3}>
-          {data.map((item, i) => {
+          {myData.map((item, i) => {
             return (
               <Grid item xs={12} sm={6} md={3} key={i}>
                 <CardStructure

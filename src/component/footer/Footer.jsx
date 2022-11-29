@@ -21,7 +21,11 @@ const Footer = ({ filterItem, menuList }) => {
                     <Typography variant="h6"><PhoneIcon /> 03000000000</Typography>
                 </Grid>
                 <Grid md={3} xs={12}>
-                    <Typography variant='h5'>CATEGORY</Typography>
+                    <Typography variant='h5'>Mens</Typography>
+                    <Typography variant="h6">Womens</Typography>
+                    <Typography variant="h6"> Kids</Typography>
+                    <Typography variant="h6"> Accessories</Typography>
+                    {/* <Typography variant='h5'>CATEGORY</Typography>
                     {
                         menuList.map((item, index) => {
                             return (
@@ -36,7 +40,7 @@ const Footer = ({ filterItem, menuList }) => {
                                 </Typography>
                             )
                         })
-                    }
+                    } */}
                 </Grid>
                 <Grid md={3} xs={12} >
                     <Typography variant='h5'>INFORMATION</Typography>
@@ -63,7 +67,7 @@ const Footer = ({ filterItem, menuList }) => {
                     <Typography variant='h5'>NEWSLETTER SIGNUP</Typography>
                     <Typography variant="h6">Subcribe our newsletter to get 15% discount off your first purchase</Typography>
                     <Link to="acount" style={{
-                        textDecoration:"none"
+                        textDecoration: "none"
                     }}>
                         <Button sx={{
                             background: "white",

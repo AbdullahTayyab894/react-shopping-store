@@ -4,7 +4,9 @@ import video from './video.mp4'
 
 const Video = () => {
     return (
-        <div>
+        <div style={{
+            marginTop:"100px"
+        }}>
             <CardMedia
                 component='video'
                 image={video}

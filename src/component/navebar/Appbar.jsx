@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { useCart } from "react-use-cart";
-import { List, ListItem, Typography, Box} from "@mui/material";
+import { List, ListItem, Typography, Box } from "@mui/material";
 
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from "react-router-dom";
@@ -13,7 +13,8 @@ import './appbar.css'
 
 
 
-export default function MainAppbar({ filterItem, menuList }) {
+export default function MainAppbar() {
+    const userInfo = ["About Us", "Contact Us", "Login", "Sign up", "Dashboard"]
 
     const { totalItems } = useCart();
     const [isOpen, setIsopen] = useState(false);
@@ -69,11 +70,9 @@ export default function MainAppbar({ filterItem, menuList }) {
                             <Box>
                                 <List onClick={ToggleSidebar} >
                                     {
-                                        menuList.map((item, index) => {
+                                        userInfo.map((item, index) => {
                                             return (
-                                                <ListItem className="sd-link"
-                                                    onClick={() => filterItem(item)}
-                                                ><a >{item}</a>
+                                                <ListItem className="sd-link"><a >{item}</a>
                                                 </ListItem>
                                             )
                                         })

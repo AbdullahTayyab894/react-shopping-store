@@ -1,0 +1,18 @@
+
+img{
+    height: 500px;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+.slick-arrow{
+    color: black;
+}
+.slick-prev{
+    z-index: 100;
+    left: 20px !important;
+}
+.slick-next{
+    z-index: 100;
+    right: 20px !important;
+}

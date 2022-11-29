@@ -1,43 +1,49 @@
 import React, { useState } from "react";
-import Menu from './component/main page card/Api'
-import Detail from "./component/detail/Detail";
-import Cart from "./component/main cart/Cart";
-import SportShoes from './component/main page card/Shoe';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "react-use-cart";
-import Slideshow from './component/slider/Image';
-import WovenImageList from './component/new arival/Newarival';
-import MainAppbar from './component/navebar/Appbar';
-import Sales from "./component/item sales/Sales";
-import Showcard from './component/home page item/Showcard'
-import Searchbar from './component/home page item/FilterSortingSearch'
-import Footer from "./component/footer/Footer";
-import Video from "./component/media card/Video";
-import Shipping from './component/shipping detail/Shipping'
 import { ToastContainer } from 'react-toastify';
+import Cart from "./component/main cart/Cart";
+
+import MainAppbar from './component/navebar/Appbar';
+import Detail from "./component/mainApi/Detail";
+import Carousel from "./component/carousal/bigSales";
+import WovenImageList from './component/main category/mainCategory';
+import NewArrival from "./component/new arrival/NewArrival";
+import Menu from './component/mainApi/mainApi'
+import Video from "./component/media card/Video";
+import Footer from "./component/footer/Footer";
+
 import Acount from "./component/login signup/Acount";
+// import Detail from "./component/detail/Detail";
+// import SportShoes from './component/main page card/Shoe';
+// import Slideshow from './component/slider/Image';
+// import Showcard from './component/home page item/Showcard'
+// import Searchbar from './component/home page item/FilterSortingSearch'
+// import Shipping from './component/shipping detail/Shipping'
 
 
 function App() {
-  const uniqueList = [
-    ... new Set(Menu.map((item) => {
-      return item.category;
-    })
-    ), "All",
-  ]
-  const [myData, setmyData] = useState(Menu);
-  const [menuList, setmenuList] = useState(uniqueList)
+  const [myArivalData, setMyArivalData] = useState(Menu);
+  // const [myCetegoryData, setMyCategoryData] = useState(CategoryApi);
 
-  const filterItem = ((item) => {
-    if (item === "All") {
-      return setmyData(Menu)
-    }
+  // const uniqueList = [
+  //   ... new Set(Menu.map((item) => {
+  //     return item.category;
+  //   })
+  //   ), "All",
+  // ]
+  // const [menuList, setmenuList] = useState(uniqueList)
 
-    const updatedData = Menu.filter((data) => {
-      return data.category === item;
-    });
-    setmyData(updatedData);
-  });
+  // const filterItem = ((item) => {
+  //   if (item === "All") {
+  //     return setmyData(Menu)
+  //   }
+
+  //   const updatedData = Menu.filter((data) => {
+  //     return data.category === item;
+  //   });
+  //   setmyData(updatedData);
+  // });
 
 
 
@@ -45,24 +51,26 @@ function App() {
     <div className="App">
       <CartProvider>
         <BrowserRouter>
-          <MainAppbar filterItem={filterItem} menuList={menuList} />
+          <MainAppbar />
           <Routes>
             <Route path="/" element={
               <>
-                <Sales />
-                <SportShoes data={myData} />
-                <Slideshow />
+                <Carousel />
                 <WovenImageList />
+                <NewArrival />
                 <Video />
+                {/* <SportShoes data={myData} /> */}
+                {/* <Slideshow /> */}
               </>
             } />
-            <Route path="/detail:matchid" element={<Detail dataArray={myData} />} />
+            <Route path="/detail:matchid" element={<Detail myData={myArivalData} />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/home" element={<Showcard data={myData} filterItem={filterItem} menuList={menuList}/>} />
-            {/* <Route path="/stepper" element={<Shipping />} /> */}
             <Route path="/acount" element={<Acount />} />
+            {/* <Route path="/stepper" element={<Shipping />} /> */}
+            {/* <Route path="/home" element={<Showcard data={myData} filterItem={filterItem} menuList={menuList}/>} /> */}
           </Routes>
-          <Footer filterItem={filterItem} menuList={menuList} />
+          <Footer />
+          {/* <Footer filterItem={filterItem} menuList={menuList} /> */}
           <ToastContainer />
         </BrowserRouter>
       </CartProvider>

@@ -220,15 +220,15 @@ function Cart() {
           >
             Total Price: $ {cartTotal}
           </Typography>
-          {/* <Link to="/stepper" 
+          <Link to="/stepper" 
           style={{
-            textDecoration:"none"}}> */}
+            textDecoration:"none"}}>
           <StyledButton onClick={()=>{
             toast.success("Next feature added comming soon")
           }}>
             Payment
           </StyledButton>
-          {/* </Link> */}
+          </Link>
         </Box>
       </Container>
     </Box>
