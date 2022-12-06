@@ -7,8 +7,8 @@ import React, { Component } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import './styles.css'
-import './sale.css'
+import './carousalstyles.css'
+import './carousalsale.css'
 
 export default class AutoPlayMethods extends Component {
     render() {
@@ -26,16 +26,16 @@ export default class AutoPlayMethods extends Component {
             }}>
                 <Slider ref={slider => (this.slider = slider)} {...settings}>
                     <div className="img-hover-zoom img-hover-zoom--point-zoom">
-                        <img src={sale1} alt="" />
+                        <img src={sale1} alt="" className='carousal-img'/>
                     </div>
                     <div className="img-hover-zoom img-hover-zoom--point-zoom">
-                        <img src={sale2} alt="" />
+                        <img src={sale2} alt="" className="carousal-img"/>
                     </div>
                     <div className="img-hover-zoom img-hover-zoom--point-zoom">
-                        <img src={sale3} alt="" />
+                        <img src={sale3} alt="" className='carousal-img'/>
                     </div>
                     <div className="img-hover-zoom img-hover-zoom--point-zoom">
-                        <img src={sale4} alt="" />
+                        <img src={sale4} alt="" className='carousal-img'/>
                     </div>
                 </Slider>
             </div>

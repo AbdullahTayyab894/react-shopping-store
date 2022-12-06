@@ -36,7 +36,10 @@ const Details = ({ myData }) => {
   });
   const { addItem } = useCart();
   return (
-    <div>
+    <div style={{
+      marginTop:"100px",
+      marginBottom:"100px",
+    }}>
       <Link to="/" style={{ textDecoration: "none", }}>
         <Typography variant="h2" sx={{
           textAlign: "center",
@@ -112,7 +115,7 @@ const Details = ({ myData }) => {
                       disableRipple
                       onClick={() => {
                         addItem(item);
-                        // toast.success("Added in Cart, Successfully!");
+                        toast.success("Added in Cart, Successfully!");
                       }}
                       sx={{
                         color: "#ffffff",
@@ -132,7 +135,7 @@ const Details = ({ myData }) => {
               <Grid item md={6} xs={12} className="img-zoom-container">
                 <Box width="400px">
 
-                <img id="myimage" src={item.img} alt="" width="400" height="320"
+                <img id="myimage" src={item.img} alt="" width="400px" height="300px"
                   style={{
                     borderRadius: "7px 0 0 7px",
                   }} />

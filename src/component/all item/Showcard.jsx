@@ -2,10 +2,9 @@ import { Box,Container, Grid, Typography } from "@mui/material";
 import { useState } from "react";
 import CardStructure from "./Allitem";
 import Searchbar from "./FilterSortingSearch";
-import Menu from './allApi'
+import Menu from '../mainApi/mainApi'
 
-// function Showcard({ data,filterItem, menuList }) {
-  function Showcard() {
+  const Showcard = () => {
 
   const uniqueList = [
     ... new Set(Menu.map((item) => {

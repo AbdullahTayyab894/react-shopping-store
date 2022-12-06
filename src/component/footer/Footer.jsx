@@ -5,7 +5,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Link } from 'react-router-dom';
 
-const Footer = ({ filterItem, menuList }) => {
+const Footer = () => {
     return (
         <div>
             <Grid container sx={{
@@ -14,35 +14,13 @@ const Footer = ({ filterItem, menuList }) => {
                 color: "white",
                 padding: "30px 20px 30px 20px"
             }}>
-                <Grid item md={3} xs={12} >
+                <Grid item md={4} xs={12} >
                     <Typography variant='h5'>SHOPPING STORE</Typography>
                     <Typography variant="h6"><LocationOnIcon /> 22,KM feroz pur road lahore</Typography>
                     <Typography variant="h6"><EmailIcon /> abc@gmail.com</Typography>
                     <Typography variant="h6"><PhoneIcon /> 03000000000</Typography>
                 </Grid>
-                <Grid md={3} xs={12}>
-                    <Typography variant='h5'>Mens</Typography>
-                    <Typography variant="h6">Womens</Typography>
-                    <Typography variant="h6"> Kids</Typography>
-                    <Typography variant="h6"> Accessories</Typography>
-                    {/* <Typography variant='h5'>CATEGORY</Typography>
-                    {
-                        menuList.map((item, index) => {
-                            return (
-                                <Typography variant="h6" sx={{
-                                    "&:hover": {
-                                        color: "#D0BCA8",
-                                        cursor: "pointer"
-                                    }
-                                }}
-                                    onClick={() => filterItem(item)}
-                                ><a >{item}</a>
-                                </Typography>
-                            )
-                        })
-                    } */}
-                </Grid>
-                <Grid md={3} xs={12} >
+                <Grid md={4} xs={12} >
                     <Typography variant='h5'>INFORMATION</Typography>
                     <Typography variant="h6" sx={{
                         "&:hover": {
@@ -63,7 +41,7 @@ const Footer = ({ filterItem, menuList }) => {
                         }
                     }}>FAQS</Typography>
                 </Grid>
-                <Grid md={3} xs={12} >
+                <Grid md={4} xs={12} >
                     <Typography variant='h5'>NEWSLETTER SIGNUP</Typography>
                     <Typography variant="h6">Subcribe our newsletter to get 15% discount off your first purchase</Typography>
                     <Link to="acount" style={{

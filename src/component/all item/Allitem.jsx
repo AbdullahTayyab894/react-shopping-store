@@ -1,18 +1,17 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useCart } from "react-use-cart";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import InfoIcon from '@mui/icons-material/Info';
-import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import './style.css'
+import './allitem.css'
 
 function CardStructure({ pic, title, price, product }) {
   const { addItem } = useCart();
 
   return (
     <Box className="container" >
-      <img src={pic} alt="item view" width="80%" height="300px" className="image" />
+      <img src={pic} alt="item view" width="100%" height="300px" />
       <Box className="overlay">
         <Box className="text" >
           <Typography variant="h6" color="white">
