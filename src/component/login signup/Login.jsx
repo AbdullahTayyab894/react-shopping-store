@@ -6,9 +6,9 @@ import './acount.css'
 
 const Login = () => {
 
-    const { register, handleSubmit,formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = ((data)=>{
+    const onSubmit = ((data) => {
         console.log(data);
         toast.success("Login form submitted")
     })
@@ -21,25 +21,35 @@ const Login = () => {
             <Box>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label>Email*</label>
-                    <input {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })} />
+                    <input {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
+                        style={{
+                            width: "100%",
+                            border: "2px solid #D0BCA8",
+                            background: "white",
+                        }} />
                     {errors.email && <span style={{
                         color: "red"
                     }}>Enter valid Email</span>} <br />
                     <label>Password*</label>
-                    <input {...register("password", { required: true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/ })} />
+                    <input {...register("password", { required: true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/ })}
+                        style={{
+                            width: "100%",
+                            border: "2px solid #D0BCA8",
+                            background: "white",
+                        }} />
                     {errors.password && <span style={{
                         color: "red"
                     }}>Enter valid Password (Testing193!)</span>} <br />
-                    <input type="submit" 
-                    style={{
-                        width: "120px",
-                        height: "50px",
-                        border: "1px solid gray",
-                        "&:hover":{
-                            background: "black",
-                            color: "white",
-                        }
-                    }}/>
+                    <input type="submit"
+                        style={{
+                            width: "120px",
+                            height: "50px",
+                            border: "1px solid gray",
+                            "&:hover": {
+                                background: "black",
+                                color: "white",
+                            }
+                        }} />
                 </form>
             </Box>
         </div>

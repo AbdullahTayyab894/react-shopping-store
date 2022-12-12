@@ -2,7 +2,6 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { Typography, Box } from '@mui/material'
 import { toast } from 'react-toastify'
-import './acount.css'
 
 const Signup = () => {
 
@@ -13,22 +12,29 @@ const Signup = () => {
         toast.success("Sign Up form submitted")
     })
     return (
-        <div>
-            <Typography variant='h4' sx={{
+        <div style={{
+            paddingTop: "80px"
+        }}>
+            <Typography variant='h3' sx={{
                 mb: "20px",
                 textAlign: "center"
-            }}>Sign Up</Typography>
+            }}>Contact Us</Typography>
             <Box sx={{
-                ml: "25px"
+                ml: "25px",
+                width: "50%",
+                margin: "auto"
             }}>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <label>Name</label>
-                    <input {...register("firstName", { required: true, maxLength: 20 })}
+                    <label>Name*</label>
+                    <input {...register("name", { required: true, maxLength: 20 })}
                         style={{
                             width: "100%",
                             border: "2px solid #D0BCA8",
                             background: "white",
                         }} />
+                    {errors.name && <span style={{
+                        color: "red"
+                    }}>Enter your name</span>} <br />
                     <label>Email*</label>
                     <input {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
                         style={{
@@ -39,26 +45,36 @@ const Signup = () => {
                     {errors.email && <span style={{
                         color: "red"
                     }}>Enter valid Email</span>} <br />
-                    <label>Password*</label>
-                    <input {...register("password", { required: true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/ })}
+                    <label>Phone Number*</label>
+                    <input {...register("phone", { required: true })}
                         style={{
                             width: "100%",
                             border: "2px solid #D0BCA8",
                             background: "white",
                         }} />
-                    {errors.password && <span style={{
+                    {errors.phone && <span style={{
                         color: "red"
-                    }}>Enter valid Password (Testing193!)</span>} <br />
-                    <input type="submit"
+                    }}>Enter Your Phone Number</span>} <br />
+                    <label>Message*</label>
+                    <textarea rows="10" cols="50" maxlength="500"
+                        {...register("message", { required: true, maxLength: 20 })}
                         style={{
-                            width: "120px",
-                            height: "50px",
-                            border: "1px solid gray",
-                            "&:hover": {
-                                background: "black",
-                                color: "white",
-                            }
+                            width: "100%",
+                            border: "2px solid #D0BCA8",
+                            background: "white",
                         }} />
+                    {errors.message && <span style={{
+                        color: "red"
+                    }}>Enter your Message</span>} <br />
+                    <button
+                        style={{
+                            width: "100%",
+                            height: "50px",
+                            border: "1px solid black",
+                            background: "black",
+                            color: "white",
+                            marginBottom:"20px",
+                        }}>Submit</button>
                 </form>
             </Box>
         </div>

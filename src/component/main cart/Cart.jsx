@@ -14,6 +14,7 @@ import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import { useCart } from "react-use-cart";
 import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const StyledTableCell = styled(TableCell)(() => ({
   [`&.${tableCellClasses.body}`]: {
@@ -224,7 +225,7 @@ function Cart() {
           style={{
             textDecoration:"none"}}>
           <StyledButton onClick={()=>{
-            toast.success("Next feature added comming soon")
+            // toast.success("Next feature added comming soon")
           }}>
             Payment
           </StyledButton>

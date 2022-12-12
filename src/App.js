@@ -16,6 +16,8 @@ import Footer from "./component/footer/Footer";
 import Acount from "./component/login signup/Acount";
 import Showcard from './component/all item/Showcard'
 import Shipping from './component/shipping detail/Shipping'
+import About from "./component/about/About";
+import Contact from './component/contact/Contact'
 
 
 function App() {
@@ -40,6 +42,8 @@ function App() {
             <Route path="/acount" element={<Acount />} />
             <Route path="/stepper" element={<Shipping />} />
             <Route path="/home" element={<Showcard />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
           <Footer />
           <ToastContainer />

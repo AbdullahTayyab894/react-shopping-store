@@ -58,16 +58,24 @@ const NewArrival = () => {
                     })
                 }
             </Grid>
-            <Button size="large" sx={{
-                position: "absolute",
-                left: "43%",
-                right: "50px",
-                width: "200px",
-                color: "white",
-                background: "black",
-                marginTop: "20px",
-                marginBottom: "20px",
-            }}>Show More</Button>
+            <Link to="home" style={{
+                textDecoration: "none"
+            }}>
+                <Button size="large" sx={{
+                    position: "absolute",
+                    left: "43%",
+                    right: "50px",
+                    width: "200px",
+                    color: "white",
+                    background: "black",
+                    marginTop: "20px",
+                    marginBottom: "20px",
+                    "&:hover": {
+                        background: "black",
+                        color: "red"
+                    }
+                }}>Show More</Button>
+            </Link>
         </div>
     )
 }

@@ -11,10 +11,7 @@ import Badge from '@mui/material/Badge';
 import TemporaryDrawer from '../drawer cart/Addcart'
 import './appbar.css'
 
-
-
 export default function MainAppbar() {
-    const userInfo = ["About Us", "Contact Us", "Login", "Sign up", "Dashboard"]
 
     const { totalItems } = useCart();
     const [isOpen, setIsopen] = useState(false);
@@ -69,14 +66,61 @@ export default function MainAppbar() {
                         }}>
                             <Box>
                                 <List onClick={ToggleSidebar} >
-                                    {
-                                        userInfo.map((item, index) => {
-                                            return (
-                                                <ListItem className="sd-link"><a >{item}</a>
-                                                </ListItem>
-                                            )
-                                        })
-                                    }
+                                    <Link to="about" style={{
+                                        textDecoration: "none",
+                                        color: "black",
+                                    }}>
+                                        <ListItem sx={{
+                                            "&:hover": {
+                                                color: "red",
+                                                background: "black",
+                                                borderRadius: "10px"
+                                            }
+                                        }}>About Us</ListItem>
+                                    </Link>
+                                    <Link to="contact" style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}>
+                                        <ListItem sx={{
+                                            "&:hover": {
+                                                color: "red",
+                                                background: "black",
+                                                borderRadius: "10px"
+                                            }
+                                        }}>Contact Us</ListItem>
+                                    </Link>
+                                    <Link to="acount" style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}>
+                                        <ListItem sx={{
+                                            "&:hover": {
+                                                color: "red",
+                                                background: "black",
+                                                borderRadius: "10px"
+                                            }
+                                        }}>Sign Up</ListItem>
+                                    </Link>
+                                    <Link to="acount" style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}>
+                                        <ListItem sx={{
+                                            "&:hover": {
+                                                color: "red",
+                                                background: "black",
+                                                borderRadius: "10px"
+                                            }
+                                        }}>Login</ListItem>
+                                    </Link>
+                                    <ListItem sx={{
+                                        "&:hover": {
+                                            color: "red",
+                                            background: "black",
+                                            borderRadius: "10px"
+                                        }
+                                    }}>Dashboard</ListItem>
                                 </List>
                             </Box>
                         </Box>
