@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) =>
 
 function getSteps() {
     return [<b style={{ color: 'purple' }}>'Information'</b>,
-    // <b style={{ color: 'purple' }}>'Shipping'</b>,
-    // <b style={{ color: 'purple' }}>'Payment'</b>
+    <b style={{ color: 'purple' }}>'Shipping'</b>,
+    <b style={{ color: 'purple' }}>'Payment'</b>
 ];
 }
 
@@ -49,13 +49,13 @@ function getStepContent(step) {
         case 1:
             return (
                 <Box>
-                    {/* <Shippingdetail /> */}
+                    <Shippingdetail />
                 </Box>
             );
         case 2:
             return (
                 <Box>
-                    {/* <Payment /> */}
+                    <Payment />
                 </Box>
             );
         default:
